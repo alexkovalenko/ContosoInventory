@@ -2,6 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ContosoInventory.Server.Models;
 
+/// <summary>
+/// Represents an inventory category.
+/// </summary>
 public class Category
 {
     public int Id { get; set; }
@@ -21,4 +24,6 @@ public class Category
     public DateTime CreatedDate { get; set; }
 
     public DateTime LastModifiedDate { get; set; }
+
+    public ICollection<Product> Products { get; set; } = new List<Product>();
 }
